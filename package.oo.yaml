@@ -1,13 +1,16 @@
-version: 0.0.1
+version: 0.1.0
 scripts:
   bootstrap: |
     npm install
     poetry install --no-root
-name: "@hyrious/qwen-tts"
-displayName: Qwen 文字转语音
+name: "qwen-tts"
+displayName: "%display-name%"
+description: "%description%"
 icon: ./icon.png
 ui:
   blocks:
     - qwen-tts
 dependencies:
   downloader: 0.1.5
+releaseNotes: First stable release
+repository: https://github.com/oomol-flows/qwen-tts

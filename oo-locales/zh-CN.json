@@ -8,5 +8,7 @@
   "qwen-tts-instructions": "语音合成的附加指令，仅 instruct 模型可用",
   "qwen-tts-optimize-instructions": "是否优化指令，仅 instruct 模型可用",
   "qwen-tts-audio-url": "生成的音频 URL",
-  "qwen-tts-expires-at": "音频 URL 过期时间"
+  "qwen-tts-expires-at": "音频 URL 过期时间",
+  "display-name": "Qwen 文字转语音",
+  "description": "使用 Qwen TTS API 将文本转换为自然语音，并支持多种语音选项"
 }

@@ -8,5 +8,9 @@
   "qwen-tts-instructions": "Additional instructions for speech synthesis, only support instruct models",
   "qwen-tts-optimize-instructions": "Whether to optimize instructions, only support instruct models",
   "qwen-tts-audio-url": "Generated audio URL",
-  "qwen-tts-expires-at": "Audio URL expiration time"
+  "qwen-tts-expires-at": "Audio URL expiration time",
+  "qwen-text-to-speech": "Qwen Text to Speech",
+  "display-name": "Qwen Text to Speech",
+  "convert-text-to-natural-speech-using-qwen-tts-api-with-multiple": "Convert text to natural speech using Qwen TTS API with multiple voice options",
+  "description": "Convert text to natural speech using Qwen TTS API with multiple voice options"
 }

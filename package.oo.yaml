@@ -3,5 +3,11 @@ scripts:
   bootstrap: |
     npm install
     poetry install --no-root
-name: qwen-tts
+name: "@hyrious/qwen-tts"
 displayName: Qwen 文字转语音
+icon: ./icon.png
+ui:
+  blocks:
+    - qwen-tts
+dependencies:
+  downloader: 0.1.5

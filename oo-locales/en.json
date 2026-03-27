@@ -1,0 +1,12 @@
+{
+  "qwen-tts-title": "Qwen Text to Speech",
+  "qwen-tts-description": "Convert text to speech using Qwen TTS API",
+  "qwen-tts-text": "Text to convert to speech",
+  "qwen-tts-voice": "Voice type for speech synthesis",
+  "qwen-tts-model": "TTS model version",
+  "qwen-tts-language-type": "Language type for synthesis",
+  "qwen-tts-instructions": "Additional instructions for speech synthesis, only support instruct models",
+  "qwen-tts-optimize-instructions": "Whether to optimize instructions, only support instruct models",
+  "qwen-tts-audio-url": "Generated audio URL",
+  "qwen-tts-expires-at": "Audio URL expiration time"
+}

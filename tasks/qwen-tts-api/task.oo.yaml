@@ -1,0 +1,132 @@
+inputs_def:
+  - handle: text
+    description: "%qwen-tts-text%"
+    json_schema:
+      type: string
+      ui:widget: text
+    nullable: false
+
+  - handle: voice
+    description: "%qwen-tts-voice%"
+    json_schema:
+      enum:
+        - Cherry
+        - Serena
+        - Ethan
+        - Chelsie
+        - Momo
+        - Vivian
+        - Moon
+        - Maia
+        - Kai
+        - Nofish
+        - Bella
+        - Jennifer
+        - Ryan
+        - Katerina
+        - Aiden
+        - Eldric Sage
+        - Mia
+        - Mochi
+        - Bellona
+        - Vincent
+        - Bunny
+        - Neil
+        - Elias
+        - Arthur
+        - Nini
+        - Ebona
+        - Seren
+        - Pip
+        - Stella
+        - Bodega
+        - Sonrisa
+        - Alek
+        - Dolce
+        - Sohee
+        - Ono Anna
+        - Lenn
+        - Emilien
+        - Andre
+        - Radio Gol
+        - Jada
+        - Dylan
+        - Li
+        - Marcus
+        - Roy
+        - Peter
+        - Sunny
+        - Eric
+        - Rocky
+        - Kiki
+    value: Cherry
+    nullable: true
+
+  - handle: model
+    description: "%qwen-tts-model%"
+    json_schema:
+      enum:
+        - qwen3-tts-instruct-flash
+        - qwen3-tts-flash
+    value: qwen3-tts-flash
+    nullable: true
+
+  - group: Advanced Options
+    collapsed: true
+
+  - handle: language_type
+    description: "%qwen-tts-language-type%"
+    json_schema:
+      enum:
+        - Auto
+        - Chinese
+        - English
+        - German
+        - Italian
+        - Portuguese
+        - Spanish
+        - Japanese
+        - Korean
+        - French
+        - Russian
+    value: Auto
+    nullable: true
+
+  - handle: instructions
+    description: "%qwen-tts-instructions%"
+    json_schema:
+      type: string
+      ui:widget: text
+    value:
+    nullable: true
+
+  - handle: optimize_instructions
+    description: "%qwen-tts-optimize-instructions%"
+    json_schema:
+      type: boolean
+    value: false
+    nullable: true
+
+outputs_def:
+  - handle: audio_url
+    description: "%qwen-tts-audio-url%"
+    json_schema:
+      type: string
+      format: uri
+    nullable: false
+
+  - handle: expires_at
+    description: "%qwen-tts-expires-at%"
+    json_schema:
+      type: string
+    nullable: false
+
+executor:
+  name: nodejs
+  options:
+    entry: index.ts
+
+title: "%qwen-tts-title%"
+icon: ":carbon:user-speaker:"
+description: "%qwen-tts-description%"
+private: true

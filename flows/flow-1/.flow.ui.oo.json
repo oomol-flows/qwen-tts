@@ -1,0 +1,19 @@
+{
+  "nodes": {
+    "qwen-tts#2": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "sections": {
+        "inputs": {
+          "groupCollapsed": {
+            "Advanced Options": true
+          }
+        }
+      }
+    }
+  }
+}

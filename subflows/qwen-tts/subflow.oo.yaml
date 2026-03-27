@@ -1,0 +1,183 @@
+inputs_def:
+  - handle: text
+    json_schema:
+      type: string
+      ui:widget: text
+    nullable: false
+    description: "%qwen-tts-text%"
+    executor_name: nodejs
+  - handle: voice
+    json_schema:
+      enum:
+        - Cherry
+        - Serena
+        - Ethan
+        - Chelsie
+        - Momo
+        - Vivian
+        - Moon
+        - Maia
+        - Kai
+        - Nofish
+        - Bella
+        - Jennifer
+        - Ryan
+        - Katerina
+        - Aiden
+        - Eldric Sage
+        - Mia
+        - Mochi
+        - Bellona
+        - Vincent
+        - Bunny
+        - Neil
+        - Elias
+        - Arthur
+        - Nini
+        - Ebona
+        - Seren
+        - Pip
+        - Stella
+        - Bodega
+        - Sonrisa
+        - Alek
+        - Dolce
+        - Sohee
+        - Ono Anna
+        - Lenn
+        - Emilien
+        - Andre
+        - Radio Gol
+        - Jada
+        - Dylan
+        - Li
+        - Marcus
+        - Roy
+        - Peter
+        - Sunny
+        - Eric
+        - Rocky
+        - Kiki
+    nullable: true
+    description: "%qwen-tts-voice%"
+    value: Cherry
+    executor_name: nodejs
+  - handle: model
+    json_schema:
+      enum:
+        - qwen3-tts-instruct-flash
+        - qwen3-tts-flash
+    nullable: true
+    description: "%qwen-tts-model%"
+    value: qwen3-tts-flash
+    executor_name: nodejs
+  - group: Advanced Options
+    collapsed: true
+  - handle: language_type
+    json_schema:
+      enum:
+        - Auto
+        - Chinese
+        - English
+        - German
+        - Italian
+        - Portuguese
+        - Spanish
+        - Japanese
+        - Korean
+        - French
+        - Russian
+    nullable: true
+    description: "%qwen-tts-language-type%"
+    value: Auto
+    executor_name: nodejs
+  - handle: instructions
+    json_schema:
+      type: string
+      ui:widget: text
+    nullable: true
+    description: "%qwen-tts-instructions%"
+    value:
+    executor_name: nodejs
+  - handle: optimize_instructions
+    json_schema:
+      type: boolean
+    nullable: true
+    description: "%qwen-tts-optimize-instructions%"
+    value: false
+    executor_name: nodejs
+outputs_def:
+  - handle: audio
+    json_schema:
+      type: string
+      ui:widget: file
+nodes:
+  - node_id: qwen-tts-api#1
+    title: "千问文字转语音 #1"
+    inputs_from:
+      - handle: text
+        from_flow:
+          - input_handle: text
+      - handle: voice
+        value: Cherry
+        from_flow:
+          - input_handle: voice
+      - handle: model
+        value: qwen3-tts-flash
+        from_flow:
+          - input_handle: model
+      - handle: language_type
+        value: Auto
+        from_flow:
+          - input_handle: language_type
+      - handle: instructions
+        value: null
+        from_flow:
+          - input_handle: instructions
+      - handle: optimize_instructions
+        value: false
+        from_flow:
+          - input_handle: optimize_instructions
+    task: self::qwen-tts-api
+  - node_id: file-downloader#1
+    title: "下载文件 #1"
+    inputs_from:
+      - handle: url
+        from_node:
+          - node_id: qwen-tts-api#1
+            output_handle: audio_url
+      - handle: saved_path
+        value: null
+      - handle: if_existing
+        value: override
+      - handle: threads_count
+        value: 1
+      - handle: headers
+        value:
+          {}
+      - handle: cookies
+        value:
+          {}
+      - handle: window_width
+        value: 7
+      - handle: failure_ladder
+        value:
+          - 5
+      - handle: min_segment_length
+        value: 1048576
+      - handle: once_fetch_size
+        value: 16384
+      - handle: timeout
+        value: 30
+      - handle: retry_times
+        value: 0
+      - handle: retry_sleep
+        value: 0
+    subflow: downloader::file-downloader
+outputs_from:
+  - handle: audio
+    from_node:
+      - node_id: file-downloader#1
+        output_handle: saved_path
+title: "%qwen-tts-title%"
+description: "%qwen-tts-description%"

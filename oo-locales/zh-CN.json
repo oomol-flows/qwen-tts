@@ -1,0 +1,12 @@
+{
+  "qwen-tts-title": "千问文字转语音",
+  "qwen-tts-description": "使用千问模型文字转语音",
+  "qwen-tts-text": "要转换为语音的文字",
+  "qwen-tts-voice": "语音合成音色",
+  "qwen-tts-model": "TTS 模型版本",
+  "qwen-tts-language-type": "合成语言类型",
+  "qwen-tts-instructions": "语音合成的附加指令，仅 instruct 模型可用",
+  "qwen-tts-optimize-instructions": "是否优化指令，仅 instruct 模型可用",
+  "qwen-tts-audio-url": "生成的音频 URL",
+  "qwen-tts-expires-at": "音频 URL 过期时间"
+}

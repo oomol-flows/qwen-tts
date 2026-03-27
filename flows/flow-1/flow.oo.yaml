@@ -1,1 +1,19 @@
-nodes: []
+title: "Test Qwen TTS"
+description: "Test flow for Qwen text-to-speech block"
+nodes:
+  - node_id: qwen-tts#2
+    title: "千问文字转语音 #2"
+    inputs_from:
+      - handle: text
+        value: 这是一段测试文本
+      - handle: voice
+        value: Cherry
+      - handle: model
+        value: qwen3-tts-flash
+      - handle: language_type
+        value: Auto
+      - handle: instructions
+        value: null
+      - handle: optimize_instructions
+        value: false
+    subflow: self::qwen-tts

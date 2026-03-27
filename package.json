@@ -1,3 +1,6 @@
 {
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@oomol/types": "^0.0.34"
+  }
 }

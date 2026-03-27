@@ -18,7 +18,7 @@
 ```yaml
 nodes:
   - node_id: tts#1
-    task: self::qwen-tts-api
+    task: self::qwen-tts
     inputs_from:
       - handle: text
         value: "Hello, this is a test message"
@@ -31,7 +31,7 @@ nodes:
 ```yaml
 nodes:
   - node_id: tts#1
-    task: self::qwen-tts-api
+    task: self::qwen-tts
     inputs_from:
       - handle: text
         value: "你好，欢迎使用千问语音合成"

@@ -1,0 +1,7 @@
+version: 0.0.1
+scripts:
+  bootstrap: |
+    npm install
+    poetry install --no-root
+name: qwen-tts
+displayName: Qwen 文字转语音
